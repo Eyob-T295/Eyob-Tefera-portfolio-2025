@@ -1,6 +1,4 @@
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" width="100%" alt="Eyob Tefera Portfolio Banner"/>
-</div>
+
 
 # 👨‍💻 Eyob Tefera – Technology Officer Portfolio 2025
 
@@ -15,7 +13,6 @@ Built with **React + Vite** and integrated with **Google AI Studio**, this site 
 | Category | Tools |
 |-----------|-------|
 | **Frontend** | React, Vite, TypeScript, TailwindCSS |
-| **AI Integration** | Google AI Studio (Gemini API) |
 | **Version Control** | Git & GitHub |
 | **Deployment** | Vercel |
 | **Build Tool** | npm, vite |
@@ -25,7 +22,6 @@ Built with **React + Vite** and integrated with **Google AI Studio**, this site 
 ## 💡 Features
 
 - ⚡ Fast & optimized React + Vite setup  
-- 🧠 AI-powered content and project section via Gemini API  
 - 💼 Dynamic “Projects” & “About Me” sections  
 - 📱 Fully responsive (mobile-friendly) layout  
 - 🌐 Easily deployable on Vercel or Netlify  
