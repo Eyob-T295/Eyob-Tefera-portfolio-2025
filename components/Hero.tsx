@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
           <span className="blinking-cursor">|</span>
         </h2>
         <p className="max-w-xl text-lg text-[var(--text-mid)] mb-10 animate-[fadeInUp_0.9s_ease-out]">
-          My work bridges hardware and software through real-time systems and secure, scalable infrastructure combining hands-on IT and network support with backend development in Python, React, and PHP.
+          My work bridges hardware and software through real time systems and secure, scalable infrastructure combining hands on IT and network support with backend development in Python, React, and PHP.
         </p>
         
         {/* New Icons Section */}
