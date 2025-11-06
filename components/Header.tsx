@@ -101,7 +101,7 @@ const Header: React.FC = () => {
                   </span>
                 </a>
               ))}
-              <a href="Eyob_Tefera_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-[var(--accent-color)] text-[var(--accent-color)] font-bold py-2 px-4 rounded-md text-sm hover:bg-[var(--accent-color)]/10 transition-all duration-300">
+              <a href="Resume/Eyob_Tefera_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-[var(--accent-color)] text-[var(--accent-color)] font-bold py-2 px-4 rounded-md text-sm hover:bg-[var(--accent-color)]/10 transition-all duration-300">
                 <DocumentTextIcon />
                 <span>Resume</span>
               </a>
@@ -130,7 +130,7 @@ const Header: React.FC = () => {
                 </span>
               </a>
             ))}
-             <a href="Eyob_Tefera_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 border border-[var(--accent-color)] text-[var(--accent-color)] font-bold py-3 px-8 rounded-md text-lg hover:bg-[var(--accent-color)]/10 transition-all duration-300 mt-4">
+             <a href="Resume/Eyob_Tefera_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 border border-[var(--accent-color)] text-[var(--accent-color)] font-bold py-3 px-8 rounded-md text-lg hover:bg-[var(--accent-color)]/10 transition-all duration-300 mt-4">
                 <DocumentTextIcon />
                 <span>Resume</span>
               </a>

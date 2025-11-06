@@ -26,7 +26,7 @@ const About: React.FC = () => {
                 <div className="absolute inset-0 rounded-lg bg-[#64ffda] transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
                 <div className="relative aspect-square rounded-lg overflow-hidden shadow-2xl transition-transform duration-300 group-hover:-translate-x-2 group-hover:-translate-y-2 border-2 border-transparent">
                    <img 
-                      src="me.jpg" 
+                      src="image/me.jpg" 
                       alt="Eyob Tefera" 
                       className="w-full h-full object-cover"
                     />
