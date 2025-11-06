@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-start text-left">
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <p className="text-lg text-[var(--accent-color)] mb-4 animate-[fadeInUp_0.3s_ease-out]">Hi, my name is</p>
+        <p className="text-lg text-[var(--accent-color)] mb-4 animate-[fadeInUp_0.3s_ease-out]">Hi, my name is gulema</p>
         <h1 className="text-5xl md:text-7xl font-bold text-[var(--text-light)] mb-2 tracking-tight animate-[fadeInUp_0.5s_ease-out]">
           Eyob Tefera.
         </h1>
