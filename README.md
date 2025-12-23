@@ -2,9 +2,9 @@
 
 # 👨‍💻 Eyob Tefera – Technology Officer Portfolio 2025
 
-Welcome to my personal portfolio website — a modern, AI-powered, responsive web app that showcases my background, experience, and projects as a **Technology Officer, Developer, and IT Specialist**.  
+Welcome to my personal portfolio website — a modern, responsive web app that showcases my background, experience, and projects as a **Technology Officer, Developer, and IT Specialist**.  
 
-Built with **React + Vite** and integrated with **Google AI Studio**, this site highlights my professional journey through clean design, animations, and technical case studies.
+Built with **React + Vite**  this site highlights my professional journey through clean design, animations, and technical case studies.
 
 ---
 
