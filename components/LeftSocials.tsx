@@ -25,7 +25,7 @@ const LeftSocials: React.FC = () => {
         <div className={`hidden md:flex fixed bottom-0 left-10 z-30 flex-col items-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <ul className="flex flex-col items-center gap-6 p-0 m-0 list-none">
                 <li>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 inline-block text-[var(--text-mid)] hover:text-[var(--accent-color)] transform hover:-translate-y-1 transition-all">
+                    <a href="https://github.com/Eyob-T295" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 inline-block text-[var(--text-mid)] hover:text-[var(--accent-color)] transform hover:-translate-y-1 transition-all">
                         <GithubIcon />
                     </a>
                 </li>

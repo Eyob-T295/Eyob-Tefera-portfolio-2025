@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <!-- Favicon -->
@@ -19,11 +19,20 @@
         --accent-color: #f472b6; /* Fuchsia */
         --glass-bg: rgb(15 23 42 / 0.5);
       }
+      /* Light theme overrides */
+      [data-theme="light"] {
+        --bg-color: #f8fafc; /* light background */
+        --text-light: #0f172a;
+        --text-mid: #475569;
+        --accent-color: #6d28d9; /* indigo accent for light theme */
+        --glass-bg: rgba(255,255,255,0.6);
+      }
       body {
         font-family: 'Inter', sans-serif;
         background-color: var(--bg-color);
         color: var(--text-mid);
         cursor: none;
+        transition: background-color 240ms ease, color 240ms ease;
       }
       .aurora-bg {
         position: fixed;
@@ -125,6 +134,9 @@
           transparent 80%
         );
         -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        mask: 
           linear-gradient(#fff 0 0) content-box,
           linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
