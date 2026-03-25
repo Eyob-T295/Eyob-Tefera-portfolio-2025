@@ -67,13 +67,37 @@ const Header: React.FC = () => {
     { name: 'Contact', href: '#contact', icon: <MailIcon /> },
   ];
 
+  const [activeSection, setActiveSection] = useState('hero');
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const sections = ['hero', 'about', 'experience', 'projects', 'certifications', 'contact'];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.unobserve(el);
+      });
     };
   }, []);
   
@@ -108,7 +132,7 @@ const Header: React.FC = () => {
 
 
   return (
-    <header className={`sticky top-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-slate-900/50 backdrop-blur-lg border-b border-slate-800' : 'bg-transparent'}`}>
+    <header className={`sticky top-0 z-40 transition-all duration-500 ${isScrolled ? 'bg-[var(--bg-color)]/70 backdrop-blur-xl border-b border-white/5 py-4 shadow-2xl' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <a href="#hero" onClick={handleLinkClick} className="text-2xl font-bold text-white transition-colors hover:text-[var(--accent-color)]">
@@ -116,27 +140,21 @@ const Header: React.FC = () => {
           </a>
           <div className="flex items-center">
             <nav className="hidden md:flex items-center space-x-6">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="flex items-center gap-2 text-md font-medium text-[var(--text-mid)] hover:text-[var(--accent-color)] transition-colors duration-300"
+                  className={`flex items-center gap-2 text-md font-medium transition-all duration-300 ${activeSection === link.href.slice(1) ? 'text-[var(--accent-color)] translate-x-1' : 'text-[var(--text-mid)] hover:text-[var(--accent-color)]'}`}
                 >
                   {link.icon}
-                  <span>
-                    <span className="text-[var(--accent-color)]">0{index + 1}.</span> {link.name}
-                  </span>
+                  <span>{link.name}</span>
                 </a>
               ))}
               <a href="/Resume/Eyob_Tefera_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-[var(--accent-color)] text-[var(--accent-color)] font-bold py-2 px-4 rounded-md text-sm hover:bg-[var(--accent-color)]/10 transition-all duration-300">
                 <DocumentTextIcon />
                 <span>Resume</span>
               </a>
-              {/* <a href="https://github.com/Eyob-T295" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="flex items-center gap-2 text-[var(--text-mid)] hover:text-[var(--accent-color)] transition-colors ml-2">
-                <GitHubIcon />
-                <span className="sr-only">GitHub</span>
-              </a> */}
               <button onClick={toggleTheme} aria-label="Toggle theme" className="ml-4 p-2 rounded-md text-[var(--text-mid)] hover:text-[var(--accent-color)] transition-colors focus:outline-none">
                 {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
               </button>
@@ -163,9 +181,7 @@ const Header: React.FC = () => {
                 className="flex items-center gap-3 text-lg font-medium text-[var(--text-mid)] hover:text-[var(--accent-color)] transition-colors duration-300"
               >
                 {link.icon}
-                <span>
-                  <span className="text-[var(--accent-color)]">0{index + 1}.</span> {link.name}
-                </span>
+                <span>{link.name}</span>
               </a>
             ))}
              <a href="/Resume/Eyob_Tefera_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 border border-[var(--accent-color)] text-[var(--accent-color)] font-bold py-3 px-8 rounded-md text-lg hover:bg-[var(--accent-color)]/10 transition-all duration-300 mt-4">

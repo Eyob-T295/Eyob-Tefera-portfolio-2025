@@ -43,13 +43,13 @@ const CertificationIcon = () => (
 
 
 const CertificationCard: React.FC<{ cert: Certification }> = ({ cert }) => (
-    <div className="bg-[var(--glass-bg)] backdrop-blur-md border border-slate-800 p-6 rounded-md flex items-center gap-6 transition-all duration-300 group hover:-translate-y-2 hover:shadow-lg hover:shadow-pink-500/10 h-full">
-        <div className="transform transition-transform duration-300">
+    <div className="bg-[var(--glass-bg)] backdrop-blur-xl border border-white/5 p-8 rounded-2xl flex items-center gap-6 transition-all duration-500 group hover:-translate-y-2 hover:bg-white/5 hover:border-[var(--accent-color)]/30 hover:shadow-2xl h-full">
+        <div className="p-3 rounded-xl bg-[var(--accent-color)]/5 text-[var(--accent-color)] group-hover:bg-[var(--accent-color)]/10 transition-all duration-300">
             <CertificationIcon />
         </div>
         <div>
-            <h3 className="text-lg font-bold text-[var(--text-light)] group-hover:text-[var(--accent-color)]">{cert.title}</h3>
-            <p className="text-[var(--text-mid)]">{cert.issuer} &middot; {cert.date}</p>
+            <h3 className="text-xl font-bold text-[var(--text-light)] group-hover:text-[var(--accent-color)] mb-1 transition-colors duration-300">{cert.title}</h3>
+            <p className="text-[var(--text-mid)] font-medium">{cert.issuer} &middot; <span className="text-slate-500 font-mono text-sm">{cert.date}</span></p>
         </div>
     </div>
 );
@@ -63,7 +63,7 @@ const Certifications: React.FC = () => {
       <h2 className={`section-heading text-3xl font-bold text-[var(--text-light)] mb-12 flex items-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         Certifications & Training
       </h2>
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {certificationsData.map((cert, index) => (
           <div
             key={cert.title}

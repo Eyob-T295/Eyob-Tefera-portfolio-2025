@@ -13,24 +13,24 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start gap-12 lg:gap-16">
           <div className="md:w-2/3 text-lg text-slate-400 space-y-6">
             <p>
-              With a background in Computer Science (Bsc) and Project Management (Msc), I am a System Engineer and Researcher passionate about tackling complex challenges at the intersection of hardware and software. My professional experience is centered around research and development, where I design, test, and integrate solutions involving real-time data processing, signal analysis, and secure system deployment.
-
-
+              Hi! I'm Eyob, a System Engineer and Tech Researcher with a passion for building things that live at the intersection of hardware and software. With a background in Computer Science and Project Management, I focus on creating reliable, scalable solutions for real-world problems.
             </p>
             <p>
-              I transform theoretical concepts into practical, reliable systems. My work spans developing AI models for signal classification, building low latency data pipelines, and securing production environments. With a strong mix of technical expertise and project management insight, I focus on delivering scalable, high impact solutions. I’m continuously exploring AI and emerging technologies to turn research into real world innovation.
+              My work revolves around research and development, where I design and integrate systems involving real-time data, signal analysis, and secure deployments. I love transforming complex theoretical concepts into practical tools that make a difference.
+            </p>
+            <p>
+              Whether it's building AI models for signal classification or optimizing enterprise IT infrastructure, I'm always looking for new ways to innovate and learn.
             </p>
           </div>
-          <div className="md:w-1/3 w-2/3 mx-auto md:mx-0">
-            <div className="relative group aspect-square">
-                <div className="absolute inset-0 rounded-lg bg-[#64ffda] transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
-                <div className="relative aspect-square rounded-lg overflow-hidden shadow-2xl transition-transform duration-300 group-hover:-translate-x-2 group-hover:-translate-y-2 border-2 border-transparent">
+          <div className="md:w-1/3 w-full max-w-[300px] mx-auto md:mx-0">
+            <div className="relative group">
+                <div className="absolute inset-0 rounded-2xl border-2 border-[var(--accent-color)]/30 translate-x-6 translate-y-6 transition-all duration-700 group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
                    <img 
                       src="/image/me.jpg" 
                       alt="Eyob Tefera" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700 ease-in-out"
                     />
-                    <div className="absolute inset-0 bg-[#0a192f]/50 group-hover:bg-transparent transition-colors duration-300"></div>
                 </div>
             </div>
           </div>

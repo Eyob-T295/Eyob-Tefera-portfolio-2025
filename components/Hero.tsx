@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
-// Define icons as components inside Hero.tsx
-const AIIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-10 w-10"><path d="M12 8V4H8"/><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 2v2"/><path d="M9 2v2"/></svg>
+const GitHubIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
 );
 
-const PythonIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-10 w-10"><path d="M10.5 8.5a2 2 0 0 1-2.8-2.8l2.8 2.8z M13.5 11.5a2 2 0 0 0 2.8 2.8l-2.8-2.8z"/><path d="M11 12a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/><path d="M4 14a6 6 0 1 0 5-5"/><path d="M15 4a6 6 0 1 1-5 5"/></svg>
+const LinkedInIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8"><title>LinkedIn</title><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
 );
 
 const ReactIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76c-.24-.24-3.12-3.12-6.24-3.12-3.12 0-6 2.88-6.24 3.12m12.48 8.48c.24.24 3.12 3.12 6.24 3.12 3.12 0 6-2.88 6.24-3.12m-12.48-8.48s-3.12-3.12-6.24-3.12m0 14.72s3.12 3.12 6.24 3.12"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-60 12 12)"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+);
+
+const PythonIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 10v4M8 12h8"/><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
 );
 
 const PHPIcon = () => (
-    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-9 w-9 fill-current"><title>PHP</title><path d="M12 1.404L1.758 7.313v11.25l10.242 5.91 10.242-5.91V7.313L12 1.403zm-1.84 4.091h1.528v3.476h2.79v-3.476h1.527v8.909h-1.527v-3.92h-2.79v3.92h-1.528v-8.909zM8.07 5.495h2.51v8.909H8.07v-8.909zm10.252 0h1.528v3.476h2.79v-3.476h1.528v8.909h-1.528v-3.92h-2.79v3.92h-1.528v-8.909z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
 );
 
 
@@ -23,18 +26,27 @@ const Hero: React.FC = () => {
   const [subIndex, setSubIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentText, setCurrentText] = useState('');
-  const titles = [" an Emerging Tech Researcher."," Backend Developer"," a System Engineer.", " an R&D Professional."," a Technology Officer"," ICT Trainer"," IT Support specialist" ];
-  const typingSpeed = 1;
-  const deletingSpeed = 0.5;
-  const pauseDuration = 10;
+  const titles = [
+    " a Tech Researcher.",
+    " a Full-stack Developer.",
+    " a Solution-oriented Engineer.",
+    " someone who builds with passion."
+  ];
+  const typingSpeed = 100; // Adjusted for better feel
+  const deletingSpeed = 50;
+  const pauseDuration = 2000;
 
   useEffect(() => {
     const handleTyping = () => {
       if (!isDeleting && subIndex === titles[index].length) {
         setTimeout(() => setIsDeleting(true), pauseDuration);
-      } else if (isDeleting && subIndex === 0) {
+        return;
+      } 
+      
+      if (isDeleting && subIndex === 0) {
         setIsDeleting(false);
         setIndex((prev) => (prev + 1) % titles.length);
+        return;
       }
 
       const timeout = setTimeout(() => {
@@ -45,7 +57,7 @@ const Hero: React.FC = () => {
       return () => clearTimeout(timeout);
     };
 
-    const typingTimeout = setTimeout(handleTyping, 100);
+    const typingTimeout = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
     return () => clearTimeout(typingTimeout);
   }, [subIndex, index, isDeleting, titles]);
 
@@ -53,51 +65,49 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-start text-left">
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <p className="text-lg text-[var(--accent-color)] mb-4 animate-[fadeInUp_0.3s_ease-out]">Hi, my name is</p>
-        <h1 className="text-5xl md:text-7xl font-bold text-[var(--text-light)] mb-2 tracking-tight animate-[fadeInUp_0.5s_ease-out]">
+        <p className="text-xl text-[var(--accent-color)] mb-4 font-medium opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
+          Hi there, I'm
+        </p>
+        <h1 className="text-6xl md:text-8xl font-bold text-[var(--text-light)] mb-4 tracking-tight opacity-0 animate-[fadeInUp_0.6s_ease-out_0.2s_forwards]">
           Eyob Tefera.
         </h1>
-        <h2 className="text-4xl md:text-6xl font-bold text-slate-400 mb-6 animate-[fadeInUp_0.7s_ease-out] min-h-[56px] md:min-h-[72px]">
-          I am<span>{currentText}</span>
+        <h2 className="text-4xl md:text-6xl font-bold text-slate-400 mb-8 opacity-0 animate-[fadeInUp_0.7s_ease-out_0.4s_forwards] min-h-[56px] md:min-h-[72px]">
+          I'm<span>{currentText}</span>
           <span className="blinking-cursor">|</span>
         </h2>
-        <p className="max-w-xl text-lg text-[var(--text-mid)] mb-10 animate-[fadeInUp_0.9s_ease-out]">
-          My work bridges hardware and software through real-time systems and secure, scalable infrastructure combining hands-on IT and network support with backend development in Python, React, and PHP.
+        <p className="max-w-2xl text-xl text-[var(--text-mid)] mb-12 leading-relaxed opacity-0 animate-[fadeInUp_0.8s_ease-out_0.6s_forwards]">
+          I build robust hardware and software integrations with a focus on real-time systems and scalable infrastructure. Based on my experience in IT and network support, I develop efficient, user-centric solutions.
         </p>
         
-        {/* New Icons Section */}
-        <div className="flex items-center gap-6 md:gap-8 mt-12 animate-[fadeInUp_1.1s_ease-out]">
-            <div className="group relative">
-                <div className="text-[var(--text-mid)] transition-all duration-300 transform hover:-translate-y-1 hover:text-[var(--accent-color)]">
-                    <AIIcon />
-                </div>
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-slate-700 text-white text-xs rounded py-1 px-2 pointer-events-none">
-                    AI / ML
-                </span>
+        {/* Hero Icons Section */}
+        <div className="flex flex-wrap items-center gap-8 mt-16 animate-[fadeInUp_1.1s_ease-out_forwards] opacity-0">
+            {/* Social Group */}
+            <div className="flex items-center gap-6 pr-8 border-r border-white/10">
+                <a href="https://github.com/Eyob-T295" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[var(--accent-color)] transition-all duration-300 transform hover:-translate-y-1">
+                    <GitHubIcon />
+                </a>
+                <a href="https://www.linkedin.com/in/eyob-tefera-5b9b3a21a" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[var(--accent-color)] transition-all duration-300 transform hover:-translate-y-1">
+                    <LinkedInIcon />
+                </a>
             </div>
-             <div className="group relative">
-                <div className="text-[var(--text-mid)] transition-all duration-300 transform hover:-translate-y-1 hover:text-[var(--accent-color)]">
-                    <PythonIcon />
+
+            {/* Tech Group */}
+            <div className="flex items-center gap-6 md:gap-8">
+                <div className="group relative">
+                    <div className="text-slate-500 transition-all duration-300 transform hover:-translate-y-1 hover:text-[var(--accent-color)]">
+                        <ReactIcon />
+                    </div>
                 </div>
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-slate-700 text-white text-xs rounded py-1 px-2 pointer-events-none">
-                    Python
-                </span>
-            </div>
-            <div className="group relative">
-                <div className="text-[var(--text-mid)] transition-all duration-300 transform hover:-translate-y-1 hover:text-[var(--accent-color)]">
-                    <ReactIcon />
+                <div className="group relative">
+                    <div className="text-slate-500 transition-all duration-300 transform hover:-translate-y-1 hover:text-[var(--accent-color)]">
+                        <PythonIcon />
+                    </div>
                 </div>
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-slate-700 text-white text-xs rounded py-1 px-2 pointer-events-none">
-                    React
-                </span>
-            </div>
-            <div className="group relative">
-                <div className="text-[var(--text-mid)] transition-all duration-300 transform hover:-translate-y-1 hover:text-[var(--accent-color)]">
-                    <PHPIcon />
+                <div className="group relative">
+                    <div className="text-slate-500 transition-all duration-300 transform hover:-translate-y-1 hover:text-[var(--accent-color)]">
+                        <PHPIcon />
+                    </div>
                 </div>
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-slate-700 text-white text-xs rounded py-1 px-2 pointer-events-none">
-                    PHP
-                </span>
             </div>
         </div>
       </div>

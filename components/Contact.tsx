@@ -19,24 +19,24 @@ const Contact: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="contact" ref={ref} className="py-20 md:py-32 text-center">
-      <h2 className={`section-heading text-3xl font-bold text-slate-100 mb-4 flex items-center justify-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+    <section id="contact" ref={ref} className="py-20 md:py-32 text-center max-w-2xl mx-auto">
+      <h2 className={`section-heading text-3xl font-bold text-[var(--text-light)] mb-6 flex items-center justify-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         Get In Touch
       </h2>
-      <p className="text-lg text-slate-400 max-w-xl mx-auto mb-10">
-        I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to connect with me through any of the platforms below.
+      <p className="text-xl text-[var(--text-mid)] mb-12 leading-relaxed">
+        I'm always excited to connect! Whether you have a question, a project idea, or just want to say hi, feel free to reach out on any of these platforms.
       </p>
-      <div className="flex justify-center items-center gap-8 md:gap-12">
-        <a href="https://github.com/Eyob-T295" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-400 hover:text-[#64ffda] transition-all duration-300 transform hover:-translate-y-1">
-          <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8"><title>GitHub</title><path d="M12 2C6.477 2 2 6.484 2 12.02c0 4.427 2.865 8.18 6.839 9.504.5.093.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.455-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.607.069-.607 1.004.071 1.532 1.034 1.532 1.034.892 1.53 2.341 1.088 2.91.833.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.112-4.555-4.948 0-1.091.39-1.984 1.03-2.683-.103-.254-.447-1.273.098-2.652 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.748-1.026 2.748-1.026.546 1.379.202 2.398.099 2.652.64.699 1.029 1.592 1.029 2.683 0 3.846-2.337 4.692-4.565 4.942.36.31.678.923.678 1.862 0 1.344-.012 2.427-.012 2.756 0 .269.18.58.688.481C19.138 20.198 22 16.443 22 12.02 22 6.484 17.523 2 12 2z"></path></svg>
+      <div className="flex justify-center items-center gap-10 md:gap-14">
+        <a href="https://github.com/Eyob-T295" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-[var(--text-mid)] hover:text-[var(--accent-color)] transition-all duration-300 transform hover:-translate-y-2">
+          <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-10 w-10"><title>GitHub</title><path d="M12 2C6.477 2 2 6.484 2 12.02c0 4.427 2.865 8.18 6.839 9.504.5.093.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.455-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.607.069-.607 1.004.071 1.532 1.034 1.532 1.034.892 1.53 2.341 1.088 2.91.833.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.112-4.555-4.948 0-1.091.39-1.984 1.03-2.683-.103-.254-.447-1.273.098-2.652 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.748-1.026 2.748-1.026.546 1.379.202 2.398.099 2.652.64.699 1.029 1.592 1.029 2.683 0 3.846-2.337 4.692-4.565 4.942.36.31.678.923.678 1.862 0 1.344-.012 2.427-.012 2.756 0 .269.18.58.688.481C19.138 20.198 22 16.443 22 12.02 22 6.484 17.523 2 12 2z"></path></svg>
         </a>
-        <a href="https://www.linkedin.com/in/eyobtefera1/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#64ffda] transition-all duration-300 transform hover:-translate-y-1">
+        <a href="https://www.linkedin.com/in/eyobtefera1/" target="_blank" rel="noopener noreferrer" className="text-[var(--text-mid)] hover:text-[var(--accent-color)] transition-all duration-300 transform hover:-translate-y-2">
           <LinkedInIcon />
         </a>
-        <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#64ffda] transition-all duration-300 transform hover:-translate-y-1">
+        <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="text-[var(--text-mid)] hover:text-[var(--accent-color)] transition-all duration-300 transform hover:-translate-y-2">
           <TelegramIcon />
         </a>
-        <a href="https://wa.me/251911439853" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#64ffda] transition-all duration-300 transform hover:-translate-y-1">
+        <a href="https://wa.me/251911439853" target="_blank" rel="noopener noreferrer" className="text-[var(--text-mid)] hover:text-[var(--accent-color)] transition-all duration-300 transform hover:-translate-y-2">
           <WhatsAppIcon />
         </a>
       </div>

@@ -10,6 +10,7 @@ export interface Project {
   contributions: string[];
   githubUrl?: string;
   liveUrl?: string;
+  image?: string;
 }
 
 export interface Skill {

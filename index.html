@@ -13,25 +13,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
       :root {
-        --bg-color: #0a0e02;
-        --text-light: #e2e8f0;
-        --text-mid: #94a3b8;
-        --accent-color: #f472b6; /* Fuchsia */
-        --glass-bg: rgb(15 23 42 / 0.5);
+        --bg-color: #0f172a; /* Slate 900 */
+        --text-light: #f8fafc; /* Slate 50 */
+        --text-mid: #94a3b8; /* Slate 400 */
+        --accent-color: #6366f1; /* Indigo 500 */
+        --glass-bg: rgba(30, 41, 59, 0.7); /* Slate 800 */
       }
       /* Light theme overrides */
       [data-theme="light"] {
-        --bg-color: #f8fafc; /* light background */
+        --bg-color: #f8fafc;
         --text-light: #0f172a;
         --text-mid: #475569;
-        --accent-color: #6d28d9; /* indigo accent for light theme */
-        --glass-bg: rgba(255,255,255,0.6);
+        --accent-color: #4f46e5; /* Indigo 600 */
+        --glass-bg: rgba(255, 255, 255, 0.8);
       }
       body {
         font-family: 'Inter', sans-serif;
         background-color: var(--bg-color);
         color: var(--text-mid);
-        cursor: none;
+        cursor: default; /* Change from none to default for friendliness */
         transition: background-color 240ms ease, color 240ms ease;
       }
       .aurora-bg {
@@ -41,12 +41,19 @@
         width: 100%;
         height: 100%;
         z-index: -1;
-        opacity: 0.3;
-        background: radial-gradient(ellipse at 20% 80%, #4f46e5, transparent),
-                    radial-gradient(ellipse at 80% 30%, #d946ef, transparent),
-                    radial-gradient(ellipse at 90% 90%, #2563eb, transparent);
-        animation: aurora 15s linear infinite;
-        background-size: 200% 200%;
+        opacity: 0.15;
+        background: radial-gradient(circle at 20% 30%, #4f46e5, transparent 50%),
+                    radial-gradient(circle at 80% 70%, #6366f1, transparent 50%);
+        filter: blur(80px);
+      }
+      .aurora-bg::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.2;
+        filter: url(#grainy);
+        pointer-events: none;
       }
       @keyframes aurora {
         0% { background-position: 0% 50%; }
@@ -90,18 +97,10 @@
         background: #334155;
       }
       
-      .section-heading::before {
-        content: '0' counter(section) '.';
-        counter-increment: section;
-        margin-right: 0.75rem;
-        color: var(--accent-color);
-        font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
-        font-size: 1.25rem; /* text-xl */
-        font-weight: 400;
-      }
-
-      main {
-        counter-reset: section;
+      .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
       }
 
       .writing-mode-v-rl {
@@ -117,6 +116,22 @@
       @keyframes blink {
         from, to { color: transparent; }
         50% { color: var(--accent-color); }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       
       .glowing-border-card {
@@ -142,6 +157,7 @@
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         opacity: 0;
+        pointer-events: none; /* Add this to allow clicks to pass through to elements below */
         transition: opacity 0.3s ease;
       }
       .glowing-border-card:hover::before {
@@ -160,6 +176,12 @@
 <link rel="stylesheet" href="/index.css">
 </head>
   <body>
+    <svg style="display: none;">
+      <filter id="grainy">
+        <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+    </svg>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

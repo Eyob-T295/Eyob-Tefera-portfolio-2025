@@ -17,10 +17,7 @@ const App: React.FC = () => {
   return (
     <>
       <div className="aurora-bg"></div>
-      <Cursor />
       <Header />
-      <LeftSocials />
-      <RightEmail />
       <main className="relative z-10 container mx-auto px-6 sm:px-10 md:px-20">
         <Hero />
         <About />
@@ -31,7 +28,6 @@ const App: React.FC = () => {
         <Certifications />
         <Contact />
       </main>
-      <Footer />
     </>
   );
 };

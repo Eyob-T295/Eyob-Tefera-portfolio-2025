@@ -68,31 +68,31 @@ const Experience: React.FC = () => {
         Where I've Worked
       </h2>
       <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
-        <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible border-b-2 md:border-b-0 md:border-l-2 border-slate-800">
+        <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible border-b-2 md:border-b-0 md:border-l-2 border-slate-800/50">
           {experienceData.map((exp, index) => (
             <button
               key={exp.company}
               onClick={() => setActiveTab(index)}
-              className={`text-left whitespace-nowrap px-4 py-3 text-sm font-mono transition-all duration-300 relative ${activeTab === index ? 'text-[var(--accent-color)]' : 'text-[var(--text-mid)] hover:bg-slate-800/50 hover:text-[var(--accent-color)]'}`}
+              className={`text-left whitespace-nowrap px-6 py-4 text-sm font-medium transition-all duration-300 relative ${activeTab === index ? 'text-[var(--accent-color)] bg-[var(--accent-color)]/5' : 'text-[var(--text-mid)] hover:bg-slate-800/30 hover:text-[var(--accent-color)]'}`}
             >
               {exp.company}
                {activeTab === index && (
-                <span className="absolute bottom-[-2px] left-0 md:bottom-0 md:left-[-2px] md:top-0 h-0.5 md:h-full w-full md:w-0.5 bg-[var(--accent-color)]"></span>
+                <span className="absolute bottom-[-2px] left-0 md:bottom-0 md:left-[-2px] md:top-0 h-0.5 md:h-full w-full md:w-0.5 bg-[var(--accent-color)] shadow-[0_0_10px_var(--accent-color)]"></span>
               )}
             </button>
           ))}
         </div>
-        <div className="min-h-[300px] p-4 rounded-md bg-[var(--glass-bg)] border border-slate-800 backdrop-blur-md">
+        <div className="flex-1 min-h-[350px] p-8 rounded-xl bg-[var(--glass-bg)] border border-slate-800/50 backdrop-blur-xl shadow-2xl">
           {experienceData.map((exp, index) => (
-            <div key={index} className={`${activeTab === index ? 'block' : 'hidden'}`}>
-              <h3 className="text-xl font-bold text-[var(--text-light)]">
+            <div key={index} className={`${activeTab === index ? 'block animate-[fadeIn_0.5s_ease-out]' : 'hidden'}`}>
+              <h3 className="text-2xl font-bold text-[var(--text-light)]">
                 {exp.role} <span className="text-[var(--accent-color)]">@ {exp.company}</span>
               </h3>
-              <p className="font-mono text-sm text-slate-500 mt-1 mb-6">{exp.date}</p>
-              <ul className="space-y-3 text-[var(--text-mid)]">
+              <p className="font-mono text-sm text-slate-500 mt-2 mb-8">{exp.date}</p>
+              <ul className="space-y-4 text-[var(--text-mid)] text-lg">
                 {exp.details.map((detail, i) => (
                   <li key={i} className="flex items-start space-x-3">
-                    <svg className="w-4 h-4 mt-1 text-[var(--accent-color)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
+                    <svg className="w-5 h-5 mt-1 text-[var(--accent-color)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
                     <span>{detail}</span>
                   </li>
                 ))}

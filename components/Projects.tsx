@@ -175,7 +175,8 @@ const projectsData: Project[] = [
       'Implemented gallery upload, optimization and management workflows.',
       'Implemented event listing pages with SEO-friendly metadata and event detail pages.',
     ],
-    liveUrl: '#',
+    liveUrl: 'https://psy-addis-indol.vercel.app/',
+    image: '/image/projects/psy-addis.jpg',
   },
   {
     id: 16,
@@ -189,21 +190,25 @@ const projectsData: Project[] = [
       'Developed admin dashboards for monitoring calls and client interactions.',
       'Implemented notifications and reporting for bookings and client activity.',
     ],
-    liveUrl: '#',
+    liveUrl: 'https://summitconnect.vercel.app/',
+    image: '/image/projects/summit-connect.jpg',
   },
   {
     id: 17,
     category: 'Web & System Development',
     title: 'Lalibela Restaurant (Table Booking & Web Platform)',
     role: 'Full-stack Developer',
-    description: 'A dynamic website and table booking system for a UK-based Ethiopian restaurant.',
-    techStack: ['React', 'Node.js', 'MySQL'],
+    description: 'A full-feature restaurant website with booking system, barcode checks, and an automated notification system.',
+    techStack: ['React', 'Node.js', 'MySQL', 'Barcode Integration'],
     contributions: [
-      'Implemented a table reservation system with availability checking and confirmations.',
-      'Built dynamic menu and service pages and integrated contact/location features.',
-      'Added booking management features to the admin dashboard and reporting.',
+      'Implemented a table reservation system with barcode verification for check-ins.',
+      'Developed a staff/admin control panel for real-time reservation management.',
+      'Built an interactive digital menu and marketing platform.',
+      'Integrated an interactive restaurant map for user navigation.',
+      'Automated reservation email notifications for both staff and customers.'
     ],
-    liveUrl: '#',
+    liveUrl: 'https://www.lalibelarestaurantuk.com/',
+    image: '/image/projects/lalibela.jpg',
   },
     {
     id: 9,
@@ -226,7 +231,7 @@ const projectsData: Project[] = [
     category: 'Mobile & Client Projects',
     title: 'Blue-Nile Injera (Mobile App & Web Platform)',
     role: 'Full-stack Developer / Mobile Integrator',
-    description: 'A mobile application (iOS & Android) and web platform for restaurant owners to order traditional Ethiopian injera.',
+    description: 'A mobile app (iOS & Android) and web admin panel for managing orders, tracking, and customer management.',
     techStack: ['Flutter', 'Node.js', 'MySQL', 'REST API'],
     contributions: [
       'Implemented customer ordering flows for mobile and web platforms.',
@@ -234,7 +239,9 @@ const projectsData: Project[] = [
       'Integrated delivery tracking and credit/loyalty payment processing.',
       'Worked on mobile-web API integration, testing and deployment.',
     ],
-    githubUrl: '#',
+    liveUrl: 'https://www.blue-nile-injera.com/login',
+    githubUrl: 'https://play.google.com/store/apps/details?id=com.nuramot.bluenileinjera',
+    image: '/image/projects/blue-nile.jpg',
   },
   {
     id: 10,
@@ -269,17 +276,25 @@ const Projects: React.FC = () => {
         <div className="space-y-16">
           {Object.entries(groupedProjects).map(([category, projectsInCategory]) => (
             <div key={category}>
-              <h3 className="text-2xl font-bold text-slate-300 mb-8 pl-4 border-l-4 border-[#64ffda]">{category}</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {projectsInCategory.map((project, index) => (
-                  <div 
-                    key={project.id}
-                    className={`transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <ProjectCard project={project} />
-                  </div>
-                ))}
+              <h3 className="text-2xl font-bold text-slate-300 mb-8 pl-4 border-l-4 border-[var(--accent-color)]">{category}</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
+                {projectsInCategory.map((project, index) => {
+                  // Determine span based on project title or ID
+                  const isFeatured = [1, 17, 7, 16].includes(project.id);
+                  const spanClass = isFeatured 
+                    ? "lg:col-span-2 lg:row-span-1" 
+                    : "col-span-1";
+                  
+                  return (
+                    <div 
+                      key={project.id}
+                      className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${spanClass}`}
+                      style={{ transitionDelay: `${index * 100}ms` }}
+                    >
+                      <ProjectCard project={project} />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
